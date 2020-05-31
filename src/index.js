@@ -5,7 +5,7 @@
  * @list Objects
  * @param data Entity type for the created object
  */
-export const getItemsFromListWhenReady = (props, stateKey, isList = false, splitBy = false, modifier = false) => {
+export const getItemsFromListWhenReady = (props, isList = false, splitBy = false, modifier = false) => {
 
     return new Promise((resolve, reject) => {
         try {
@@ -17,7 +17,7 @@ export const getItemsFromListWhenReady = (props, stateKey, isList = false, split
                     clearInterval(dataLoaderInterval);
 
                     if (isList) {
-                        this.loadItems(props.items, stateKey)
+                        this.loadItems(props.items)
                             .then(_ => resolve(_));
                     } else {
                         let data = props.displayValue;
